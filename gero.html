@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+	<html>
+	  <head>
+		<meta name="color:Background" content="#ffffff" />
+		<meta name="color:Title" content="#bfbfbf" />
+		<meta name="color:Link" content="#529ecc" />
+		<meta name="font:Title" content="Futura"/>
+		<meta name="weight:Title" content="bold" title="Bold">
+		<meta name="weight:Title" content="normal" title="Normal">
+		<meta name="font:Body" content="Helvetica Neue"/>
+		<meta name="text:Google analytics ID" content="">
+
+
+		<meta name="if:Show Icon" content="1">
+		<meta name="if:Show Tags" content="1" />
+		<meta name="if:Show Album Art on Audio Posts" content="1" />
+		<meta name="if:Show description" content="1">
+
+
+		<meta charset="UTF-8">
+		<title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}{block:SearchPage}, Search results for: {SearchQuery}{/block:SearchPage}</title>
+		{block:Description}
+		<meta name="description" content="{MetaDescription}" />
+		{/block:Description}
+		<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+
+
+		<meta content="width=device-width,minimum-scale=1.0" name="viewport">
+		<link rel="shortcut icon" href="{PortraitURL-128}">
+		<link rel="apple-touch-icon" href="{PortraitURL-128}">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+
+		<style type="text/css">
+	
+			html {
+				font-size: 100%;
+			}
+	
+			body {
+				background: {color:Background};
+				color: #4a4a4a;
+				font-family: 'Open Sans', {font:Body}, sans-serif;
+				font-weight: 300;
+				font-size: 1rem;
+				max-width: 85%;
+				word-wrap: break-word;
+				margin: 0 auto;
+				padding-top: 3rem;
+				padding-bottom: 7rem;
+	    	}
+	
+			a {
+				text-decoration: none;
+				color: {color:Link};
+			}
+	
+			h1, h2, h3, h4, h5, h6, code {
+				font-weight: 300;
+			}
+	
+			blockquote {
+				border-left: 0.1rem solid #aaaaaa;
+				margin-left: 1rem;
+				padding: 1rem 0 1rem 1rem;
+			}
+	
+			code {
+				border-left: 0.1rem solid #aaaaaa;
+				margin-left: 10px;
+				padding: 1rem 0 1rem 1rem;
+				font-family: 'Ubuntu Mono', monospace;
+				font-weight: 400;
+			}
+	
+			pre {
+				white-space: pre-wrap;
+				border-left: 0.1rem solid #aaaaaa;
+				margin-left: 1rem;
+				padding: 1rem 0 1rem 1rem;
+			}
+	
+			hr {
+				border: 0;
+				height: 0;
+				width: 50%;
+				border-top: 1px dashed #bbbbbb;
+			}
+	
+	
+			header h1 {
+				text-align: center;
+				font-family: 'Open Sans', {font:Title}, sans-serif;
+				font-size: 4.32rem;
+				text-transform: uppercase;
+			}
+	
+			header h1 a {
+				color: {color:Title};
+	        	}
+	
+			footer.bottom {
+				text-align: center;
+				color: {color:Title};
+			}
+	
+			footer.bottom a {
+				color: {color:Title};
+			}
+	
+			article {
+				margin: 5rem auto;
+				max-width: 850px;
+				width: 97%;
+			}
+	
+			article h1 {
+				font-size: 2.48rem;
+				text-align: center;
+				margin-top: 0;
+			}
+	
+			article img {
+				width: 100%;
+				margin:　0 auto;
+				display: block;
+			}
+	
+			iframe {
+				display: block;
+				margin: 0 auto;
+				max-width: 700px;
+				padding-bottom: 1.25rem;
+			}
+	
+			.link h2 {
+				color: #aaaaaa;
+			}
+	
+			.quote {
+				font-size: 1.5rem;
+				margin-bottom: 1.5rem;
+			}
+	
+			.quo-mark {
+				color: #aaaaaa;
+				margin: 0 0.5rem;
+			}
+	
+			.question, .answer {
+				color: #aaaaaa;
+				font-size: 1.5rem;
+			}
+	
+			.meta {
+				font-size: 0.8rem;
+				margin-top: 1rem;
+				text-align: right;
+				color: #aaaaaa;
+				border-bottom: 0.1rem dashed #aaaaaa;
+			}
+	
+			.tags {
+				font-size: 0.8rem;
+				text-align: right;
+			}
+	
+			.footer-top, .footer-bottom {
+				padding: 2.5rem 0;
+			}
+	
+			.arrow {
+				margin-bottom: 1rem;
+			}
+	
+			.pagelink {
+				margin-bottom: 1rem;
+			}
+	
+			.arrow a, .pagelink a {
+				margin: 0 1.5rem;
+			}
+	
+			.description {
+				font-size: 0.8rem;
+			}
+	
+			.icon img {
+				width: 2rem;
+			}
+	
+			ol.notes {
+				font-size: 0.8rem;
+				border-top: 0.1rem dashed {Title};
+				margin: 5rem 0 1rem 0;
+				padding: 0;
+			}
+	
+			ol.notes img.avatar {
+				display: none;
+			}
+	
+			ol.notes li {
+				list-style-type: none;
+				margin: 1rem;
+			}
+	
+			@media (max-width: 1000px) {
+	
+				header h1 {
+					font-size: 2.76rem;
+				}
+	
+				article h1 {
+					font-size: 1.98rem;
+	
+				}
+	
+			@media (max-width: 800px) {
+	
+				header h1 {
+					font-size: 2.2rem;
+				}
+	
+				article h1 {
+					font-size: 1.58rem;
+				}
+	
+			</style>
+	
+			<style type="text/css">
+	
+			{CustomCSS}
+	
+			</style>
+	
+		</head>
+	
+		<body>
+	
+			<header>
+				<h1><a id="about" href="/">{Title}</a></h1>
+			</header>
+	
+			{block:Posts}
+			<article>
+	
+				{block:Text}
+				<div class="text">
+				{block:Title}
+				<h1><a href="{Permalink}">{Title}</a></h1>
+				{/block:Title}
+				{Body}
+				</div>
+				{/block:Text}
+	
+		   		{block:Photo}
+		   		<div class="photo">
+				<a href="{LinkURL}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" /></a>
+		   		</div>
+		   		{block:Caption}
+		   		<p>{Caption}</p>
+		   		{/block:Caption}
+		   		{/block:Photo}
+	
+				{block:Photoset}
+				{Photoset}
+				{block:Caption}
+				{Caption}
+				{/block:Caption}
+				{/block:Photoset}
+	
+				{block:Link}
+				<div class="link">
+				<h1><a href="{URL}" {Target}>{Name}</a> external link</h1>
+				{block:Description}
+				{Description}
+				{/block:Description}
+				</div>
+				{/block:Link}
+	
+				{block:Quote}
+				<div class="quote {Length}">
+				<span class="quo-mark">&quot;</span>{Quote}<span class="quo-mark">&quot;</span>
+				</div>
+				{block:Source}{Source}{/block:Source}
+				{/block:Quote}
+	
+				{block:Answer}
+				<span class="question">question</span>
+				<p>{Question} ({Asker})</p>
+				<span class="answer">answer</span>
+				<p>{Answer}</p>
+				{block:Answer}
+	
+				{block:Video}
+				{VideoEmbed-700}
+				{block:Caption}{Caption}{/block:Caption}
+				{/block:Video}
+	
+				{block:Audio}
+				{block:AudioEmbed}
+				{AudioEmbed color="white"}
+				{/block:AudioEmbed}
+				{block:Caption}
+				{Caption}
+				{/block:Caption}
+				{/block:Audio}
+	
+				{block:Chat}
+				{block:Title}
+				{Title}
+				{/block:Title}
+				{block:Lines}
+				<div class="line {Alt}">{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</div>
+				{/block:Lines}
+				{/block:Chat}
+	
+				{block:PostNotes}
+				{PostNotes}
+				{/block:PostNotes}
+	
+			<footer>
+			<div  class="meta">
+				{block:Date}
+				{block:Reblog}<i class="fa fa-clock-o"></i>{/block:Reblog}
+				{block:NotReblog}<i class="fa fa-clock-o"></i>{/block:NotReblog}
+				<a href="{Permalink}">{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero} {12Hour}:{Minutes} {AmPm}</a>
+				{block:Reblog}
+				from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+				{block:RebloggedFromReblog}
+				<!-- (originally from {ReblogRootName}) -->
+				{/block:RebloggedFromReblog}
+				{/block:Reblog}
+				{block:NoteCount}
+				{NoteCountWithLabel}
+				{/block:NoteCount}
+				{/block:Date}
+			</div>
+	
+				{block:IfShowTags}
+				<div class="tags">
+				{block:Tags}
+				<a href="{TagURL}">{Tag}</a>
+				{/block:Tags}
+				</div>
+				{/block:IfShowTags}
+			</footer>
+	
+			{block:IfDisqusShortname}
+			{block:Permalink}
+			<script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+			<noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+			{/block:Permalink}
+			{/block:IfDisqusShortname}
+	
+		</article>
+		{/block:Posts}
+	
+		<footer class="bottom">
+		<div class="footer-top">
+			<p class="arrow">
+				{block:PermalinkPagination}
+				{block:PreviousPost}
+				<span><a href="{PreviousPost}"><i class="fa fa-chevron-circle-left"></i></a></span>
+				{/block:PreviousPost}
+				{block:NextPost}
+				<span><a href="{NextPost}"><i class="fa fa-chevron-circle-right"></i></a></span>
+				{/block:NextPost}
+				{/block:PermalinkPagination}
+				{block:PreviousPage}
+				<span><a href="{PreviousPage}"><i class="fa fa-chevron-circle-left"></i> Prev</a></span>
+				{/block:PreviousPage}
+				{block:NextPage}
+				<span><a href="{NextPage}"><i class="fa fa-chevron-circle-right"></i></a></span>
+				{/block:NextPage}
+			</p>
+				{block:HasPages}
+			<p class="pagelink">
+				{block:Pages}
+				<span><a href="{URL}">{Label}</a></span>
+				{/block:Pages}
+			</p>
+				{/block:HasPages}
+		</div>
+		<div class="footer-bottom">
+			{block:IfShowDescription}
+			<p class="description">
+				<span>{Description}</span>
+			</p>
+			{/block:IfShowDescription}
+			{block:IfShowIcon}
+			<div class="icon">
+				<a href="/"><img src="{PortraitURL-128}"></a>
+			</div>
+	 		{/block:IfShowIcon}
+		</div>
+		</footer>
+	
+		{block:IfGoogleAnalyticsID}
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', '{text:Google Analytics ID}', 'tumblr.com');
+			ga('send', 'pageview');
+		</script>
+		{/block:IfGoogleAnalyticsID}
+	</body>
+	</html>
